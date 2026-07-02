@@ -116,9 +116,10 @@
     .home-nav, .home-cta { display: none !important; }
     .home-burger { display: block; }
     .home-header.open .home-nav { display: flex !important; flex-direction: column; align-items: stretch; gap: 0; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid #E7E8E1; padding: 8px 20px 14px; box-shadow: 0 20px 30px -20px rgba(0,0,0,.2); }
-    .home-header.open .home-nav > a, .home-header.open .home-nav .hdrop > a { padding: 12px 0 !important; border-bottom: 1px solid #E7E8E1; }
-    .home-header.open .hdrop-menu { position: static !important; opacity: 1 !important; visibility: visible !important; transform: none !important; padding-top: 0 !important; }
-    .home-header.open .hdrop-inner { border: 0 !important; box-shadow: none !important; padding: 2px 0 8px 14px !important; min-width: 0 !important; }
+    .home-header.open .home-nav > a, .home-header.open .home-nav .hdrop > a { padding: 12px 0 !important; border-bottom: 1px solid #E7E8E1; display: block; }
+    /* keep the mobile menu clean — do NOT auto-expand Services sub-items */
+    .home-header.open .hdrop-menu { display: none !important; }
+    .hdrop > a::after { content: ''; }
     /* Section horizontal padding */
     [style*="px 48px"], [style*="0 48px"] { padding-left: 20px !important; padding-right: 20px !important; }
     [style*="padding:52px"] { padding: 28px !important; }
