@@ -5,6 +5,9 @@ ErrorDocument 404 /404.html
 
 RewriteEngine On
 
+# Block public access to Git internals (repo is deployed into this folder)
+RewriteRule (^|/)\.git - [F,L]
+
 # Send index_home to the root (canonical home)
 RewriteCond %{THE_REQUEST} \s/+index_home(\.html)?[\s?] [NC]
 RewriteRule ^ / [R=301,L]
